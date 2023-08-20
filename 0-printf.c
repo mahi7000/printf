@@ -12,7 +12,11 @@
 int _printf(const char *format, ...)
 {
 	int count_char;
+	int buff, width, precision, flags;
+	buff = 0;
 	va_list format_specifiers;
+
+	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
@@ -22,18 +26,19 @@ int _printf(const char *format, ...)
 	count_char = 0;
 	while (format && *format != '\0')
 	{
-		if (*format == '%')
+		if (*format != '%')
 		{
-			format++;
-			count_char = The_chosen(format, format_specifiers, count_char);
-			format++;
+			buffer[buff++] = *format;
+			if (buff == BUFF_SIZE)
+				buffer_print(buffer, &buff);
+			count_char++;
 		}
 		else
 		{
-			_putchar(*format);
-			count_char++;
-			format++;
+			print_buffer(buffer, &buff);
+			flags = get
 		}
+		format++;
 	}
 
 	va_end(format_specifiers);
