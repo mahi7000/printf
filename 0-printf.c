@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	va_start(format_specifiers, format);
 
 	count_char = 0;
-	while (format && *format != '\0')
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
