@@ -50,6 +50,8 @@ int string_print(va_list format_specifiers, int count_char)
 	i = 0;
 	while (str[i] != '\0')
 	{
+		if (str == NULL)
+			str = "(nil)";
 		_putchar(str[i]);
 		i++;
 		count_char++;
