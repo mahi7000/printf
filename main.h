@@ -9,7 +9,5 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int The_chosen(const char *format, va_list format_specifiers, int count_char);
-int string_print(va_list format_specifiers, int count_char);
 
 #endif
