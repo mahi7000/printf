@@ -13,7 +13,7 @@
  * Return: 1 or 2
  */
 
-int _print(const char *fmt, int *ind, va_list specifier char buffer[],
+int _print(const char *fmt, int *ind, va_list specifiers, char buffer[],
 		int flags, int width, int precision, int length)
 {
 	int i, unknow_len = 0, count_char = -1;
