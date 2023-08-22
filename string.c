@@ -2,7 +2,7 @@
 
 /**
  * string - prtints string
- * @specifier: list
+ * @specify: list
  * @buffer: array of characters
  * @flags: flags
  * @width: width
@@ -12,12 +12,12 @@
  * Return: number of character in string
  */
 
-int string(va_list specifier, char buffer[],
+int string(va_list specify, char buffer[],
 		int flags, int width, int precision, int length)
 {
 	int l = 0;
 	int i;
-	char *str = va_arg(specifier, char *);
+	char *str = va_arg(specify, char *);
 
 	UNUSED(buffer);
 	UNUSED(flags);
