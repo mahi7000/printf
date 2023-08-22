@@ -17,6 +17,8 @@ int percent(va_list specify, char buffer[],
                 int flags, int width, int precision, int length);
 int string(va_list specifier, char buffer[],
                 int flags, int width, int precision, int length);
+int get_precision(const char *format, int *i, va_list specifiers);
+int get_flags(const char *format, int *i);
 
 
 #endif
