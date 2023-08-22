@@ -16,7 +16,7 @@ int integer(va_list specify, char buffer[],
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
-	long int j = va_arg(types, long int);
+	long int j = va_arg(specify, long int);
 	unsigned long int num;
 
 	j = convert_length_number(j, length);

@@ -15,13 +15,13 @@
 int _write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int length)
 {
-	int length = BUFF_SIZE - ind - 1;
-	char padd = ' ', extra_ch = 0;
+	int l = BUFF_SIZE - ind - 1;
+	char p = ' ', extra_ch = 0;
 
-	UNUSED(size);
+	UNUSED(length);
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		padd = '0';
+		p = '0';
 	if (is_negative)
 		extra_ch = '-';
 	else if (flags & F_PLUS)
@@ -30,6 +30,6 @@ int _write_number(int is_negative, int ind, char buffer[],
 		extra_ch = ' ';
 
 	return (_write_num(ind, buffer, flags, width, precision,
-		length, padd, extra_ch));
+		length, p, extra_ch));
 }
 
