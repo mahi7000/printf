@@ -3,7 +3,7 @@
 /**
  * _print - Print an argument based on its type
  * @fmt: Formattable string
- * @specifier: List
+ * @specifiers: List
  * @ind: ind.
  * @buffer: Buffer array to handle print.
  * @flags: Calculates active flags
