@@ -57,7 +57,7 @@ int _write_char(char c, char buffer[],
 int _print(const char *fmt, int *ind, va_list specifiers, char buffer[],
 	int flags, int width, int precision, int length);
 int _write_num(int ind, char buffer[],
-	int flags, int width, int prec,
+	int flags, int width, int precision,
 	int length, char padd, char extra_c);
 int integer(va_list specify, char buffer[],
 		int flags, int width, int precision, int length);
