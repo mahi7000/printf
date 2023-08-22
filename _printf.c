@@ -24,13 +24,14 @@ int _printf(const char *format, ...)
 
 	va_start(specifiers, format);
 
-	for (i = 0; format && format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
 			buffer[p_buff++] = format[i];
 			if (p_buff == BUFF_SIZE)
 				PrintBuffer(buffer, &p_buff);
+			/*write(1, &format[i], 1);*/
 			count++;
 		}
 		else
@@ -42,7 +43,8 @@ int _printf(const char *format, ...)
 			length = get_length(format, &i);
 			++i;
 
-			nopr = _print(format, &i, specifiers, buffer, flags, width, precision, length);
+			nopr = _print(format, &i, specifiers, buffer,
+					flags, width, precision, length);
 			if (nopr == -1)
 				return (-1);
 			count += nopr;
