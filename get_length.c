@@ -5,7 +5,7 @@
  * @format: formattable string
  * @i: printed arguments
  *
- * Return: lenght
+ * Return: length
  */
 
 int get_length(const char *format, int *i)

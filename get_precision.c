@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_precision - calculate precision for printing
+ * get_precision - calculate the precision for printing
  * @format: Formattable string
  * @i: list of arguments
  * @specifiers:
