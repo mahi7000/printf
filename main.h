@@ -39,7 +39,6 @@ struct fmt
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
-void PrintBuffer(char buffer[], int *p_buff);
 int get_width(const char *format, int *i, va_list specifiers);
 int get_length(const char *format, int *i);
 int character(va_list specify, char buffer[],
@@ -52,9 +51,10 @@ int get_precision(const char *format, int *i, va_list specifiers);
 int get_flags(const char *format, int *i);
 
 int is_digit(char c);
+int is_printable(char c);
 int _write_char(char c, char buffer[],
 		int flags, int width, int precision, int size);
-int _print(const char *fmt, int *ind, va_list specifier, char buffer[],
+int _print(const char *fmt, int *ind, va_list specifiers, char buffer[],
 	int flags, int width, int precision, int length);
 int _write_num(int ind, char buffer[],
 	int flags, int width, int prec,
@@ -64,4 +64,5 @@ int integer(va_list specify, char buffer[],
 long int convert_length_number(long int num, int length);
 int _write_number(int is_negative, int ind, char buffer[],
 		int flags, int width, int precision, int length);
+
 #endif

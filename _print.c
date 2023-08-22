@@ -13,7 +13,7 @@
  * Return: 1 or 2
  */
 
-int _print(const char *fmt, int *ind, va_list specifier, char buffer[],
+int _print(const char *fmt, int *ind, va_list specifier char buffer[],
 		int flags, int width, int precision, int length)
 {
 	int i, unknow_len = 0, count_char = -1;
@@ -24,7 +24,7 @@ int _print(const char *fmt, int *ind, va_list specifier, char buffer[],
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
 	{
 		if (fmt[*ind] == fmt_types[i].fmt)
-			return (fmt_types[i].fn(specifier, buffer,
+			return (fmt_types[i].fn(specifiers, buffer,
 						flags, width, precision, length));
 	}
 
