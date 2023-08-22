@@ -13,7 +13,7 @@ void PrintBuffer(char buffer[], int *p_buff);
 int _printf(const char *format, ...)
 {
 	int i;
-	int nopr, count = 0;
+	int nopr = 0, count = 0;
 	int flags, width, precision, length, p_buff = 0;
 
 	va_list specifiers;
