@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 {
 	int i;
 	int nopr, count = 0;
+	int flags, width, precision, length, p_buff = 0;
 
 	va_list specifiers;
 	char buffer[BUFF_SIZE];
@@ -34,15 +35,15 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			print_buffer(buffer, &buff_ind);
+			PrintBuffer(buffer, &p_buff);
 			flags = get_flags(format, &i);
 			width = get_width(format, &i, specifiers);
 			precision = get_precision(format, &i, specifiers);
 			length = get_length(format, &i);
 			++i;
 
-			nopr = _print(format, &i, specifier, buffer, flags, width, precision, size);
-			if (no_print == -1)
+			nopr = _print(format, &i, specifiers, buffer, flags, width, precision, length);
+			if (nopr == -1)
 				return (-1);
 			count += nopr;
 		}
